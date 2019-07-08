@@ -1,0 +1,26 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="demo.isoft.com.airplan.fragments.IndexFragment">
+
+
+        <!--ScrollView只能包含一个子控件（LinearLayout）-->
+        <ScrollView
+             android:layout_width="match_parent"
+             android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <demo.isoft.com.airplan.myview.MygrideView
+                android:id="@+id/fragment_index_gridview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:numColumns="2">
+            </demo.isoft.com.airplan.myview.MygrideView>
+        </LinearLayout>
+        </ScrollView>
+</FrameLayout>
