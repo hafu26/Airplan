@@ -5,22 +5,84 @@
     tools:context="demo.isoft.com.airplan.fragments.IndexFragment">
 
 
-        <!--ScrollView只能包含一个子控件（LinearLayout）-->
-        <ScrollView
-             android:layout_width="match_parent"
-             android:layout_height="match_parent">
+    <!--ScrollView只能包含一个子控件（LinearLayout）-->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
 
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="25dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="Hi,新朋友"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="5dp"
+                        android:text="立即登录享更多服务"
+                        android:textSize="14dp" />
+                </LinearLayout>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/fragment_index_login_button"
+                    android:text="登录"
+                    android:textColor="#000000"
+                    android:textSize="26dp" />
+            </LinearLayout>
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"></LinearLayout>
+            </HorizontalScrollView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="精选权益"
+                android:textColor="#000000"
+                android:textSize="26dp"
+                android:textStyle="bold" />
+
             <demo.isoft.com.airplan.myview.MygrideView
                 android:id="@+id/fragment_index_gridview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:numColumns="2">
-            </demo.isoft.com.airplan.myview.MygrideView>
+                android:numColumns="2"></demo.isoft.com.airplan.myview.MygrideView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="15dp"
+                android:text="推荐机场"
+                android:textColor="#000000"
+                android:textSize="26dp"
+                android:textStyle="bold" />
         </LinearLayout>
-        </ScrollView>
+    </ScrollView>
 </FrameLayout>
