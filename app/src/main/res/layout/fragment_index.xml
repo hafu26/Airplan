@@ -20,50 +20,72 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginTop="25dp"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:weightSum="1">
 
                 <LinearLayout
-                    android:layout_width="match_parent"
+                    android:layout_width="260dp"
                     android:layout_height="match_parent"
-                    android:orientation="vertical">
+                    android:layout_marginLeft="5dp"
+                    android:orientation="horizontal">
 
-                    <TextView
-                        android:layout_width="wrap_content"
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="Hi,新朋友"
-                        android:textSize="20sp" />
+                        android:orientation="vertical">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_marginTop="5dp"
-                        android:text="立即登录享更多服务"
-                        android:textSize="14dp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Hi,新朋友"
+                            android:textColor="#000000"
+                            android:textSize="30sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="立即登录享更多服务"
+                            android:textSize="14dp" />
+                    </LinearLayout>
                 </LinearLayout>
 
-                <Button
+                <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/fragment_index_login_button"
-                    android:text="登录"
-                    android:textColor="#000000"
-                    android:textSize="26dp" />
-            </LinearLayout>
+                    android:layout_height="match_parent">
 
+                    <Button
+                        android:id="@+id/fragment_index_login"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="2dp"
+                        android:layout_weight="0"
+                        android:background="@drawable/fragment_index_login_button"
+                        android:text="登录"
+                        android:textColor="#000000"
+                        android:textSize="26dp" />
+                </LinearLayout>
+            </LinearLayout>
+            <!--function部分-->
             <HorizontalScrollView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="20dp">
 
-                <LinearLayout
+                <demo.isoft.com.airplan.myview.MygrideView
+                    android:id="@+id/fragment_index_gridview_function"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal"></LinearLayout>
+                    android:layout_height="wrap_content"
+                    android:numColumns="2">
+
+                </demo.isoft.com.airplan.myview.MygrideView>
             </HorizontalScrollView>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
                 android:text="精选权益"
                 android:textColor="#000000"
                 android:textSize="26dp"
@@ -78,11 +100,43 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
                 android:layout_marginTop="15dp"
                 android:text="推荐机场"
                 android:textColor="#000000"
                 android:textSize="26dp"
                 android:textStyle="bold" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/bg_gray_rounding">
+
+                <!--<TextView
+                    android:id="@+id/fragment_index_textview_weather"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />-->
+               <!-- <TextView
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="30dp"
+                    android:textSize="40dp"
+                    android:textColor="@color/footer_text_checked"
+                    android:id="@+id/fragment_index_textview_current_temp"
+                    android:text="30"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+                <ImageView
+                    android:id="@+id/fragment_index_textview_current_img"
+                    android:scaleType="fitXY"
+                    android:layout_width="60dp"
+                    android:layout_height="40dp" />
+                <TextView
+                    al
+                    android:text="20-30"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />-->
+            </RelativeLayout>
         </LinearLayout>
     </ScrollView>
 </FrameLayout>

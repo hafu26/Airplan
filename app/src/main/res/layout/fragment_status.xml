@@ -3,11 +3,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="demo.isoft.com.airplan.fragments.StatusFragment">
+<RelativeLayout
+    android:layout_margin="20dp"
+    android:background="@drawable/bg_gray_rounding"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:id="@+id/textview1"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:textSize="24sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="status" />
+    <TextView
+        android:layout_above="@+id/textview1"
+        android:layout_alignLeft="@id/textview1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="hahahahaha"/>
+</RelativeLayout>
 
 </FrameLayout>
