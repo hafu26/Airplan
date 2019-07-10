@@ -108,34 +108,45 @@
                 android:textStyle="bold" />
 
             <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:id="@+id/fragment_index_weather_line"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
                 android:layout_margin="10dp"
                 android:background="@drawable/bg_gray_rounding">
 
-                <!--<TextView
-                    android:id="@+id/fragment_index_textview_weather"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" />-->
-               <!-- <TextView
+                <TextView
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="30dp"
-                    android:textSize="40dp"
+                    android:textSize="40sp"
                     android:textColor="@color/footer_text_checked"
                     android:id="@+id/fragment_index_textview_current_temp"
-                    android:text="30"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
                 <ImageView
                     android:id="@+id/fragment_index_textview_current_img"
                     android:scaleType="fitXY"
                     android:layout_width="60dp"
-                    android:layout_height="40dp" />
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="60dp"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/fragment_index_textview_current_temp"/>
                 <TextView
-                    al
-                    android:text="20-30"
+                    android:id="@+id/fragment_index_textview_current_pm25"
+                    android:text="pm2.5:30"
+                    android:textSize="24sp"
+                    android:layout_marginLeft="60dp"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/fragment_index_textview_current_img"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />-->
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/fragment_index_textview_maxmintemp"
+                    android:textSize="24sp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="30dp"/>
             </RelativeLayout>
         </LinearLayout>
     </ScrollView>

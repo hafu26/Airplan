@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/weather_info_listview2_item_line1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/weather_info_listview2_item_line1_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="30dp"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/weather_info_listview2_item_line1_weather"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="30dp"
+            android:layout_toRightOf="@id/weather_info_listview2_item_line1_date"
+            android:textSize="24sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/weather_info_listview2_item_line2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/weather_info_listview2_item_line1">
+
+        <ImageView
+            android:id="@+id/weather_info_listview2_item_line2_imagae1"
+            android:layout_width="50dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="30dp"
+            android:scaleType="fitXY" />
+
+        <ImageView
+            android:id="@+id/weather_info_listview2_item_line2_imagae2"
+            android:layout_width="50dp"
+            android:layout_height="35dp"
+            android:layout_alignLeft="@id/weather_info_listview2_item_line2_imagae1"
+            android:layout_below="@id/weather_info_listview2_item_line2_imagae1"
+            android:layout_marginTop="3dp"
+            android:scaleType="fitXY" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/weather_info_listview2_item_line2_textview1"
+            android:layout_centerInParent="true"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/weather_info_listview2_item_line2_textview2"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="30dp"
+            android:layout_alignParentRight="true"/>
+    </RelativeLayout>
+</RelativeLayout>

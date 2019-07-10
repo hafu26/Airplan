@@ -23,9 +23,9 @@
 
         <service
             android:name=".services.MyWeatherService"
-            android:exported="false">
+            android:exported="false"></service>
 
-        </service>
+        <activity android:name=".WeatherInfoActivity"></activity>
     </application>
 
 </manifest>

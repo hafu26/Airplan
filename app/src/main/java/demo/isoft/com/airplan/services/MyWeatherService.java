@@ -11,11 +11,13 @@ import org.xutils.common.Callback;
 import org.xutils.http.RequestParams;
 import org.xutils.x;
 
+import java.io.File;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.ArrayList;
 
 import demo.isoft.com.airplan.pojo.Tipt;
+import demo.isoft.com.airplan.pojo.WeatherData;
 
 
 /**
@@ -26,6 +28,7 @@ import demo.isoft.com.airplan.pojo.Tipt;
  */
 public class MyWeatherService extends IntentService {
     String message="success";
+    ArrayList<WeatherData> weatherDatas=new ArrayList<>();
 
     public MyWeatherService() {
         super("MyWeatherService");
@@ -45,7 +48,6 @@ public class MyWeatherService extends IntentService {
 
                     @Override
                     public void onSuccess(String result) {
-                        Log.e("iss", "reault=" + result);
                         parseJson(result);
                     }
 
@@ -96,12 +98,32 @@ public class MyWeatherService extends IntentService {
                     tipts.add(tipt);
 
                 }
+
+
+                JSONArray weather_data=info.getJSONArray("weather_data");
+                for(int i=0;i<weather_data.length();i++){
+                    WeatherData data=new WeatherData();
+                    JSONObject o=weather_data.getJSONObject(i);
+                    data.setDate(o.getString("date"));
+                    data.setDayPictureUrl(o.getString("dayPictureUrl"));
+                    downLoadPicture(o.getString("dayPictureUrl"),i,"day");
+                    data.setNightPictureUrl(o.getString("nightPictureUrl"));
+                    downLoadPicture(o.getString("nightPictureUrl"),i,"night");
+                    data.setWeather(o.getString("weather"));
+                    data.setWind(o.getString("wind"));
+                    data.setTemperature(o.getString("temperature"));
+                    weatherDatas.add(data);
+                }
+
+
+
                 //发送广播
                 Intent intent=new Intent("com.iss.tiptweather");
                 intent.putExtra("pm25",pm25);
                 intent.putExtra("message",message);
                 intent.putExtra("error",error);
                 intent.putParcelableArrayListExtra("tipts",tipts);
+                intent.putParcelableArrayListExtra("weather_data",weatherDatas);
                 sendBroadcast(intent);
             }
 
@@ -110,4 +132,37 @@ public class MyWeatherService extends IntentService {
         }
     }
 
+    private void downLoadPicture(String url, final  int index, final String type) {
+        url=url+"?random="+Math.random();
+        RequestParams params=new RequestParams(url);
+        x.http().get(params, new Callback.CommonCallback<File>() {
+
+            @Override
+            public void onSuccess(File result) {
+                if("day".equals(type)){
+                    weatherDatas.get(index).setDayPicPath(result.getPath());
+                }else if ("night".equals(type)){
+                    weatherDatas.get(index).setNightPicath(result.getPath());
+                }
+                Intent intent =new Intent("com.iss.weather");
+                intent.putParcelableArrayListExtra("weather_data",weatherDatas);
+                sendBroadcast(intent);
+            }
+
+            @Override
+            public void onError(Throwable ex, boolean isOnCallback) {
+
+            }
+
+            @Override
+            public void onCancelled(CancelledException cex) {
+
+            }
+
+            @Override
+            public void onFinished() {
+
+            }
+        });
+    }
 }
