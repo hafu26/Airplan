@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/weather_info_listview1_item_line1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp">
+
+        <RelativeLayout
+            android:id="@+id/weather_info_listview1_item_line1_hh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/weather_info_listview1_item_line1_textview_tipt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="23sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/weather_info_listview1_item_line1_textview_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:layout_toRightOf="@id/weather_info_listview1_item_line1_textview_tipt"
+                android:layout_marginLeft="20dp"/>
+
+            <TextView
+                android:id="@+id/weather_info_listview1_item_line1_textview_zs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@id/weather_info_listview1_item_line1_textview_title"/>
+        </RelativeLayout>
+        <TextView
+            android:id="@+id/weather_info_listview1_item_line1_textview_des"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:layout_below="@id/weather_info_listview1_item_line1_hh"/>
+
+    </RelativeLayout>
+</LinearLayout>

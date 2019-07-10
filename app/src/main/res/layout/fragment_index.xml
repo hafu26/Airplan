@@ -69,17 +69,20 @@
             </LinearLayout>
             <!--function部分-->
             <HorizontalScrollView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="20dp">
-
-                <demo.isoft.com.airplan.myview.MygrideView
-                    android:id="@+id/fragment_index_gridview_function"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:orientation="vertical"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:numColumns="2">
+                    android:layout_height="match_parent">
+                    <demo.isoft.com.airplan.myview.MygrideView
+                        android:id="@+id/fragment_index_gridview_function"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:numColumns="5">
 
-                </demo.isoft.com.airplan.myview.MygrideView>
+                    </demo.isoft.com.airplan.myview.MygrideView>
+                </LinearLayout>
             </HorizontalScrollView>
 
             <TextView
@@ -115,38 +118,41 @@
                 android:background="@drawable/bg_gray_rounding">
 
                 <TextView
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="30dp"
-                    android:textSize="40sp"
-                    android:textColor="@color/footer_text_checked"
                     android:id="@+id/fragment_index_textview_current_temp"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="30dp"
+                    android:textColor="@color/footer_text_checked"
+                    android:textSize="40sp" />
+
                 <ImageView
                     android:id="@+id/fragment_index_textview_current_img"
-                    android:scaleType="fitXY"
                     android:layout_width="60dp"
                     android:layout_height="40dp"
-                    android:layout_marginLeft="60dp"
                     android:layout_centerVertical="true"
-                    android:layout_toRightOf="@id/fragment_index_textview_current_temp"/>
+                    android:layout_marginLeft="60dp"
+                    android:layout_toRightOf="@id/fragment_index_textview_current_temp"
+                    android:scaleType="fitXY" />
+
                 <TextView
                     android:id="@+id/fragment_index_textview_current_pm25"
-                    android:text="pm2.5:30"
-                    android:textSize="24sp"
-                    android:layout_marginLeft="60dp"
-                    android:layout_centerVertical="true"
-                    android:layout_toRightOf="@id/fragment_index_textview_current_img"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/fragment_index_textview_maxmintemp"
-                    android:textSize="24sp"
                     android:layout_centerVertical="true"
+                    android:layout_marginLeft="60dp"
+                    android:layout_toRightOf="@id/fragment_index_textview_current_img"
+                    android:text="pm2.5:30"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/fragment_index_textview_maxmintemp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
-                    android:layout_marginRight="30dp"/>
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="30dp"
+                    android:textSize="24sp" />
             </RelativeLayout>
         </LinearLayout>
     </ScrollView>

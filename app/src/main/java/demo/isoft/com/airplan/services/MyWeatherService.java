@@ -96,7 +96,6 @@ public class MyWeatherService extends IntentService {
                     tipt.setTitle(o.getString("title"));
                     tipt.setZs(o.getString("zs"));
                     tipts.add(tipt);
-
                 }
 
 

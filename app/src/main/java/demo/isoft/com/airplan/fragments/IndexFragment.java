@@ -52,7 +52,7 @@ public class IndexFragment extends Fragment {
 
     private List<FragmentIndexGridviewItem> listfunction;
     private MygrideView gridViewfunction;
-    //private FunctionAdapter adapterfunction;
+    private FunctionAdapter adapterfunction;
 
     public IndexFragment() {
         // Required empty public constructor
@@ -67,10 +67,10 @@ public class IndexFragment extends Fragment {
 
 //        首页的了功能导航栏
         gridViewfunction = (MygrideView) view.findViewById(R.id.fragment_index_gridview_function);
-
-       /* setFunctionData();
+        setFunctionData();
         adapterfunction = new FunctionAdapter();
-        gridViewfunction.setAdapter(adapterfunction);*/
+        gridViewfunction.setAdapter(adapterfunction);
+
 
 //**********************************************************
         gridView = (MygrideView) view.findViewById(R.id.fragment_index_gridview);
@@ -132,16 +132,24 @@ public class IndexFragment extends Fragment {
         getContext().unregisterReceiver(receiver);
     }
     //function部分
-   /* private void setFunctionData() {
+    private void setFunctionData() {
         listfunction = new ArrayList<>();
-        listfunction.add(new FragmentIndexGridviewItem(R.mipmap.ad_image1, "免费乘机泊车", "深航旅客专享"));
+        listfunction.add(new FragmentIndexGridviewItem(R.mipmap.ad_image1, "免费", " "));
+        listfunction.add(new FragmentIndexGridviewItem(R.mipmap.ad_image1, "免费", " "));
+        listfunction.add(new FragmentIndexGridviewItem(R.mipmap.ad_image1, "免费", " "));
+        listfunction.add(new FragmentIndexGridviewItem(R.mipmap.ad_image1, "免费", " "));
+        listfunction.add(new FragmentIndexGridviewItem(R.mipmap.ad_image1, "免费", " "));
+        listfunction.add(new FragmentIndexGridviewItem(R.mipmap.ad_image1, "免费", " "));
+        listfunction.add(new FragmentIndexGridviewItem(R.mipmap.ad_image1, "免费", " "));
+        listfunction.add(new FragmentIndexGridviewItem(R.mipmap.ad_image1, "免费", " "));
+        listfunction.add(new FragmentIndexGridviewItem(R.mipmap.ad_image1, "免费", " "));
     }
 
     private class FunctionAdapter extends BaseAdapter {
 
         @Override
         public int getCount() {
-            return 0;
+            return listfunction.size();
         }
 
         @Override
@@ -163,7 +171,7 @@ public class IndexFragment extends Fragment {
             textView1.setText(listfunction.get(position).getTitle());
             return view;
         }
-    }*/
+    }
     //function部分**************************************************
 
     public void setData() {
