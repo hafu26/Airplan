@@ -1,29 +1,252 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="demo.isoft.com.airplan.fragments.StatusFragment">
-<RelativeLayout
-    android:layout_margin="20dp"
-    android:background="@drawable/bg_gray_rounding"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:id="@+id/textview1"
-        android:layout_alignParentBottom="true"
-        android:layout_centerInParent="true"
-        android:textSize="24sp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="status" />
-    <TextView
-        android:layout_above="@+id/textview1"
-        android:layout_alignLeft="@id/textview1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="hahahahaha"/>
-</RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_status"
+        android:orientation="vertical">
+        <!--标题栏信息-->
+        <RelativeLayout
+            android:id="@+id/fragment_status_title_line"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_margin="10dp">
 
+            <TextView
+                style="@style/myTitleTextview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="航班动态" />
+
+            <TextView
+                style="@style/myTitleTextviewSubTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:text="关注列表" />
+        </RelativeLayout>
+        <!--添加背景色-->
+        <LinearLayout
+            android:id="@+id/fragment_status_title_background"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/fragment_status_title_line"
+            android:orientation="vertical">
+            <!--按照航班号查询-->
+            <LinearLayout
+                android:id="@+id/fragment_status_choose_line1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/fragment_status_title_line"
+                android:orientation="vertical">
+
+                <demo.isoft.com.airplan.myview.MyLinearLayoutTwoPart
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="#ddd"
+                    app:colorLeft="@color/white"
+                    app:colorRight="@color/alphaGray"
+                    app:heightDifference="8dp"
+                    app:lineAngle="0.3"
+                    app:lineOrientation="1"></demo.isoft.com.airplan.myview.MyLinearLayoutTwoPart>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="#fff"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:text="航班号"
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@null"
+                        android:hint="输入3-4位字母"
+                        android:textCursorDrawable="@drawable/edittext_curosr" />
+                </LinearLayout>
+            </LinearLayout>
+            <!--按照起降机场查询-->
+            <LinearLayout
+                android:id="@+id/fragment_status_choose_line2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <demo.isoft.com.airplan.myview.MyLinearLayoutTwoPart
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="#ddd"
+                    app:colorLeft="@color/alphaGray"
+                    app:colorRight="@color/white"
+                    app:heightDifference="6dp"
+                    app:lineAngle="0.3"
+                    app:lineOrientation="-1"></demo.isoft.com.airplan.myview.MyLinearLayoutTwoPart>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="#fff"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:layout_marginTop="3dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/framgment_status_airport_name_from"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:text="出发地"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="235dp"
+                            android:layout_toRightOf="@id/framgment_status_airport_name_from"
+                            android:text="目的地"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/fragment_status_airport_from"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="10dp"
+                            android:text="天津滨海"
+                            android:textColor="@color/black"
+                            android:textSize="20sp"
+                            android:maxWidth="120dp"
+                            android:ellipsize="end"
+                            android:maxLines="1"/>
+
+                        <ImageView
+                            android:id="@+id/fragment_status_airport_fromto_image"
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:layout_centerInParent="true"
+                            android:src="@mipmap/ic_transscro_gray" />
+
+                        <TextView
+                            android:id="@+id/fragment_status_airport_to"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10dp"
+                            android:text="上海虹桥"
+                            android:textColor="@color/black"
+                            android:textSize="20sp"
+                            android:maxWidth="120dp"
+                            android:ellipsize="end"
+                            android:maxLines="1"/>
+                    </RelativeLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:background="#cbcbcb"></LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="#fff">
+
+                <TextView
+                    android:layout_marginLeft="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="出发日期"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/fragment_status_textview_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        通过textview选择查询方式
+
+        <LinearLayout
+            android:id="@+id/fragment_status_chooseline"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@id/fragment_status_title_line"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/fragment_status_choose_textview1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="按航班号"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/fragment_status_choose_textview2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="按起降机场"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/fragment_status_info_find_button"
+            android:layout_margin="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/fragment_status_title_background"
+            android:background="@drawable/bg_button_green"
+            android:text="航班查询"
+            android:textSize="24sp"
+            android:textColor="@color/white"/>
+    </RelativeLayout>
 </FrameLayout>

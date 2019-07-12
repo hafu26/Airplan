@@ -68,9 +68,9 @@
                 </LinearLayout>
             </LinearLayout>
             <!--function部分-->
-            <HorizontalScrollView
+            <!--<HorizontalScrollView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content">-->
                 <LinearLayout
                     android:orientation="vertical"
                     android:layout_width="match_parent"
@@ -83,7 +83,7 @@
 
                     </demo.isoft.com.airplan.myview.MygrideView>
                 </LinearLayout>
-            </HorizontalScrollView>
+            <!--</HorizontalScrollView>-->
 
             <TextView
                 android:layout_width="match_parent"

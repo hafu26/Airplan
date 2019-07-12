@@ -4,5 +4,10 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="footer_text_checked">#09e33c</color>
+    <color name="status_press_checked">#0add3b</color>
     <color name="footer_text_normal">#dcdcdc</color>
+    <color name="white">#fff</color>
+    <color name="alphaGray">#bab9b9</color>
+    <color name="black">#000</color>
+    <color name="darkgray">#686363</color>
 </resources>

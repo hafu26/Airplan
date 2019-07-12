@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"
+            android:launchMode="singleInstance">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -23,9 +24,15 @@
 
         <service
             android:name=".services.MyWeatherService"
-            android:exported="false"></service>
+            android:exported="false" />
+        <service
+            android:name=".services.AirportListService"
+            android:exported="true"/>
 
-        <activity android:name=".WeatherInfoActivity"></activity>
+        <activity android:name=".WeatherInfoActivity" />
+        <activity android:name=".CalendarActivity" />
+        <activity android:name=".AirportListActivity" />
+        <activity android:name=".AirportSearchActivity"></activity>
     </application>
 
 </manifest>
