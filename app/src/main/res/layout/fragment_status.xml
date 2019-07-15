@@ -132,7 +132,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="235dp"
+                            android:layout_marginLeft="210dp"
                             android:layout_toRightOf="@id/framgment_status_airport_name_from"
                             android:text="目的地"
                             android:textColor="@color/black"
@@ -242,11 +242,19 @@
             android:id="@+id/fragment_status_info_find_button"
             android:layout_margin="30dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_below="@id/fragment_status_title_background"
             android:background="@drawable/bg_button_green"
             android:text="航班查询"
             android:textSize="24sp"
             android:textColor="@color/white"/>
+
+        <LinearLayout
+            android:layout_below="@id/fragment_status_info_find_button"
+            android:orientation="vertical"
+            android:background="#e9e5e5"
+            android:id="@+id/fragment_status_history_line"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
     </RelativeLayout>
 </FrameLayout>
